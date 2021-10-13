@@ -9,15 +9,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  one:
+    name: one
+    runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v2
+    - name: step one one
+      uses: actions/checkout@v2
+    - name: step one two 
+      run: env | sort
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+  two:
+    name: two
+    runs-on: windows-latest
+    steps: 
+    - name: step two one
+      uses: actions/checkout@v2
+    - name: step two two
+      run: "Get-ChildItem Env:"
