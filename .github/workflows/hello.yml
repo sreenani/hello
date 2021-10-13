@@ -17,12 +17,3 @@ jobs:
       uses: actions/checkout@v2
     - name: step one two 
       run: env | sort
-
-  two:
-    name: two
-    runs-on: windows-latest
-    steps: 
-    - name: step two one
-      uses: actions/checkout@v2
-    - name: step two two
-      run: "Get-ChildItem Env:"
